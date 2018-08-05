@@ -1,0 +1,5 @@
+/Users/peterclark/Projects/ADFGXAttacks/ADFGXAttacks/bin/Debug/ADFGXAttacks.exe
+/Users/peterclark/Projects/ADFGXAttacks/ADFGXAttacks/bin/Debug/ADFGXAttacks.pdb
+/Users/peterclark/Projects/ADFGXAttacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.csproj.CoreCompileInputs.cache
+/Users/peterclark/Projects/ADFGXAttacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.exe
+/Users/peterclark/Projects/ADFGXAttacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.pdb

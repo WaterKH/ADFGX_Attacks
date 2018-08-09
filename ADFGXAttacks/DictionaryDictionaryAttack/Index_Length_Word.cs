@@ -38,12 +38,15 @@ namespace ADFGXAttacks.DictionaryDictionaryAttack
                     if (tempWord.Length <= maxWordLength && tempWord.Length > 0)
                     {
                         // TODO Maybe go through 0 - maxWordLength and make substrings of those outside of the for loop?
-                        var tempSub = cipher.Substring(i, tempWord.Length);
-                        var alphaSub = ADFGXUtilities.ToAlphaPattern(alphaWord);
-
-                        if (alphaSub == alphaWord)
+                        if (i + tempWord.Length < cipher.Length)
                         {
-                            words[i][tempWord.Length].Add(tempWord);
+                            var tempSub = cipher.Substring(i, tempWord.Length);
+                            var alphaSub = ADFGXUtilities.ToAlphaPattern(alphaWord);
+
+                            if (alphaSub == alphaWord)
+                            {
+                                words[i][tempWord.Length].Add(tempWord);
+                            }
                         }
                     }
                 }
@@ -52,7 +55,7 @@ namespace ADFGXAttacks.DictionaryDictionaryAttack
 
         public void Attack()
         {
-            var startCipher = String.Join("", cipher.Distinct());
+            //var startCipher = String.Join("", cipher.Distinct());
 
             foreach(var index in words)
             {
@@ -60,33 +63,37 @@ namespace ADFGXAttacks.DictionaryDictionaryAttack
                 {
                     foreach (var word in length.Value)
                     {
+                        //Console.WriteLine(word);
                         var startIndex = length.Key - 1;
-                        var distinctWord = String.Join("", word.Distinct());
+                        //var distinctWord = String.Join("", word.Distinct());
                         Dictionary<char, char> key = new Dictionary<char, char>();
 
-                        for (int i = 0; i < distinctWord.Length; ++i)
+                        for (int i = 0; i < word.Length; ++i)
                         {
-                            key.Add(startCipher[i], distinctWord[i]);
+                            key.Add(cipher[i], word[i]);
                         }
 
-                        RecursiveAttack(2, startIndex, key, startCipher);
+                        RecursiveAttack(2, startIndex, key, cipher);
                     }
                 }
             }
         }
 
-        public void RecursiveAttack(int depth, int index, Dictionary<char, char>cipherKey, string distinctCipher)
+        public void RecursiveAttack(int depth, int index, Dictionary<char, char>cipherKey, string ciphertext)
         {
             if(depth >= 8)
             {
-                using(StreamWriter writer = new StreamWriter("possibilities.txt"))
+                using(StreamWriter writer = new StreamWriter("possibilities.txt", true))
                 {
                     var pt = "";
                     foreach(var c in cipher)
                     {
-                        pt += cipherKey[c];
+                        if (cipherKey.ContainsKey(c))
+                            pt += cipherKey[c];
+                        else
+                            pt += c;
                     }
-                    writer.WriteLine();
+                    writer.WriteLine(pt);
                 }
                 return;
             }
@@ -95,10 +102,11 @@ namespace ADFGXAttacks.DictionaryDictionaryAttack
             {
                 foreach (var length in index_w.Value)
                 {
+                    index += length.Key;
                     foreach (var word in length.Value)
                     {
-                        index += length.Key - 1;
-                        var distinctWord = String.Join("", word.Distinct());
+                        
+                        //var distinctWord = String.Join("", word.Distinct());
                         var key = new Dictionary<char, char>();
 
                         foreach(var k in cipherKey)
@@ -108,15 +116,24 @@ namespace ADFGXAttacks.DictionaryDictionaryAttack
 
                         bool equal = true;
 
-                        for (int i = 0; i < distinctWord.Length; ++i)
+                        for (int i = 0; i < word.Length; ++i)
                         {
-                            if (!cipherKey.ContainsKey(distinctCipher[i]))
+                            if (!key.ContainsKey(ciphertext[index + i]))
                             {
-                                if (cipherKey[distinctCipher[i]] == distinctWord[i])
+                                if (!key.ContainsValue(word[i]))
                                 {
-                                    cipherKey.Add(distinctCipher[i], distinctWord[i]);
+                                    key.Add(ciphertext[index + i], word[i]);
                                 }
                                 else
+                                {
+                                    equal = false;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                
+                                if (key[ciphertext[index + i]] != word[i])
                                 {
                                     equal = false;
                                     break;
@@ -126,11 +143,13 @@ namespace ADFGXAttacks.DictionaryDictionaryAttack
 
                         if (equal)
                         {
-                            RecursiveAttack(2, index, cipherKey, distinctCipher);
+                            depth += 1;
+                            RecursiveAttack(depth, index, key, ciphertext);
+                            depth -= 1;
                         }
-
-                        index -= length.Key + 1;
                     }
+                    index -= length.Key;
+                    //Console.WriteLine(index);
                 }
             }
         }

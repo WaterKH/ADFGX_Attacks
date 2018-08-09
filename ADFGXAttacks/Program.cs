@@ -1,5 +1,6 @@
 ﻿using System;
 using ADFGXAttacks.DictionaryDictionaryAttack;
+using ADFGXAttacks.EndOfTextWordAttack;
 
 namespace ADFGXAttacks
 {
@@ -7,8 +8,13 @@ namespace ADFGXAttacks
     {
         public static void Main(string[] args)
         {
-            Index_Length_Word attack = new Index_Length_Word();
-            attack.Attack("wordlist.txt");
+            string ciphertext = "IXSODNOIINXXSNRSNRNSRASOWXPOKXNSQL";
+            EndAttack ea = new EndAttack();
+            ea.Attack(ciphertext, "wordsEn+Zombie.txt");
+
+            //Index_Length_Word attack = new Index_Length_Word();
+            //attack.Setup("words_test.txt");
+            //attack.Attack();
         }
     }
 }

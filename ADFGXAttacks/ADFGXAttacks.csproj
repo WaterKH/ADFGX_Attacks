@@ -36,6 +36,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DictionaryDictionaryAttack\Index_Length_Word.cs" />
     <Compile Include="Utilities\ADFGXUtilities.cs" />
+    <Compile Include="EndOfTextWordAttack\EndAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DictionaryDictionaryAttack\" />

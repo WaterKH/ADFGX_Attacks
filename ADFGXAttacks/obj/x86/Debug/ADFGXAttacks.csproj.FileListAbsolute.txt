@@ -3,3 +3,8 @@
 /Users/peterclark/Projects/ADFGXAttacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.csproj.CoreCompileInputs.cache
 /Users/peterclark/Projects/ADFGXAttacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.exe
 /Users/peterclark/Projects/ADFGXAttacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.pdb
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGXAttacks/bin/Debug/ADFGXAttacks.exe
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGXAttacks/bin/Debug/ADFGXAttacks.pdb
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.csproj.CoreCompileInputs.cache
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.exe
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.pdb

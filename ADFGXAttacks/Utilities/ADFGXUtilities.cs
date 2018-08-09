@@ -29,10 +29,10 @@ namespace ADFGXAttacks.Utilities
 
             for (int i = 0; i < s.Length; ++i)
             {
-                Console.WriteLine(s[i]);
-                Console.WriteLine(key.IndexOf(s[i]));
+                //Console.WriteLine(lower_s[i]);
+                //Console.WriteLine(key.IndexOf(lower_s[i]));
                 //Console.WriteLine(s[i]);
-                ap += alphabet[key.IndexOf(s[i])];
+                ap += alphabet[key.IndexOf(lower_s[i])];
             }
 
             return ap;

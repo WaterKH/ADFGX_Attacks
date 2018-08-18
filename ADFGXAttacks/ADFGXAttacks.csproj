@@ -37,10 +37,12 @@
     <Compile Include="DictionaryDictionaryAttack\Index_Length_Word.cs" />
     <Compile Include="Utilities\ADFGXUtilities.cs" />
     <Compile Include="EndOfTextWordAttack\EndAttack.cs" />
+    <Compile Include="MiddleAttack\MiddlePatternAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DictionaryDictionaryAttack\" />
     <Folder Include="Utilities\" />
+    <Folder Include="MiddleAttack\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

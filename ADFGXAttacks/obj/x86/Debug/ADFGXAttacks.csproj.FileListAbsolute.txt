@@ -8,3 +8,9 @@
 /Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.csproj.CoreCompileInputs.cache
 /Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.exe
 /Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.pdb
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGX_Attacks/ADFGXAttacks/bin/Debug/ADFGXAttacks.exe
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGX_Attacks/ADFGXAttacks/bin/Debug/ADFGXAttacks.pdb
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.csprojResolveAssemblyReference.cache
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.csproj.CoreCompileInputs.cache
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.exe
+/Volumes/Jacob Clark/PersonalProjects/Repositories/ADFGX_Attacks/ADFGX_Attacks/ADFGXAttacks/obj/x86/Debug/ADFGXAttacks.pdb
